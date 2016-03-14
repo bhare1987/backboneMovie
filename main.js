@@ -68,7 +68,7 @@ var backboneMovie = {
       id: $parent.data('id'),
       title: $parent.children('h2').text(),
       desc: $parent.children('p').text(),
-      MPAA: $parent.children('span').text(),
+      MPAA: $parent.children('h2').children('span').text(),
       poster: $parent.children('img').attr('src')
     };
     $parent.replaceWith(backboneMovie.buildItem('form', editObj));

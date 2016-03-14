@@ -25,19 +25,26 @@ button[name='add'] {
   button[name='add']:hover {
     cursor: pointer; }
 
-.addForm {
+.addForm, .editForm {
   display: flex;
   flex-flow: column;
   align-items: center; }
-  .addForm input {
+  .addForm input, .editForm input {
     display: flex;
     width: 60%;
     padding: 5px;
     margin: 5px; }
-  .addForm button {
+  .addForm button, .editForm button {
     padding: 5px; }
-    .addForm button:hover {
+    .addForm button:hover, .editForm button:hover {
       cursor: pointer; }
+
+.editForm {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px dashed lightgray;
+  border-bottom: 1px dashed lightgray;
+  padding: 5px; }
 
 .movieItem {
   display: flex;

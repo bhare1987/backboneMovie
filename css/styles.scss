@@ -31,7 +31,7 @@ button[name='add'] {
   }
 }
 
-.addForm {
+.addForm, .editForm {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -47,6 +47,14 @@ button[name='add'] {
       cursor: pointer;
     }
   }
+}
+
+.editForm {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px dashed lightgray;
+  border-bottom: 1px dashed lightgray;
+  padding: 5px;
 }
 
 .movieItem {
