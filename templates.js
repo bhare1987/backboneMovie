@@ -1,7 +1,7 @@
 var templates = {
   movie: [
     "<div class='movieItem' data-id='<%=attributes.id%>'>",
-      "<h2><%=attributes.title%> <span><%=attributes.MPAA%></span></h2>",
+      "<h2><%=attributes.title%><span><%=attributes.year%></span> <span><%=attributes.MPAA%></span></h2>",
       "<img src='<%=attributes.poster%>'/>",
       "<p><%=attributes.desc%></p>",
       "<section class='buttons'>",
@@ -16,6 +16,7 @@ var templates = {
       '<input type="text" name="desc" placeholder="Description" value="<%=desc%>">',
       '<input type="text" name="MPAA" placeholder="MPAA Rating" value="<%=MPAA%>">',
       '<input type="text" name="poster" placeholder="Movie Poster" value="<%=poster%>">',
+      '<input type="text" name="year" placeholder="Year" value="<%=year%>">',
       '<button name="editMovie">Submit</button>',
     '</div>'
   ].join('')

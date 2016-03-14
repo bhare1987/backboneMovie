@@ -51,7 +51,8 @@ var backboneMovie = {
       title: $parent.children('input[name="title"]').val(),
       desc: $parent.children('input[name="desc"]').val(),
       MPAA: $parent.children('input[name="MPAA"]').val(),
-      poster: $parent.children('input[name="poster"]').val()
+      poster: $parent.children('input[name="poster"]').val(),
+      year: $parent.children('input[name="year"]').val()
     };
     backboneMovie.addMovie(addObj);
     $parent.addClass('hide');
@@ -66,10 +67,12 @@ var backboneMovie = {
     var $parent = movieItem.closest('div.movieItem');
     var editObj = {
       id: $parent.data('id'),
-      title: $parent.children('h2').text(),
+      title: $parent.children('h2').contents().get(0).nodeValue,
+      //http://stackoverflow.com/questions/3442394/jquery-using-text-to-retrieve-only-text-not-nested-in-child-tags
       desc: $parent.children('p').text(),
-      MPAA: $parent.children('h2').children('span').text(),
-      poster: $parent.children('img').attr('src')
+      MPAA: $parent.children('h2').children('span:nth-of-type(2)').text(),
+      poster: $parent.children('img').attr('src'),
+      year: $parent.children('h2').children('span:nth-of-type(1)').text()
     };
     $parent.replaceWith(backboneMovie.buildItem('form', editObj));
   },
@@ -81,7 +84,8 @@ var backboneMovie = {
       title: $parent.children('input[name="title"]').val(),
       desc: $parent.children('input[name="desc"]').val(),
       MPAA: $parent.children('input[name="MPAA"]').val(),
-      poster: $parent.children('input[name="poster"]').val()
+      poster: $parent.children('input[name="poster"]').val(),
+      year: $parent.children('input[name="year"]').val()
     };
     backboneMovie.editMovie(id, editObj);
   },
