@@ -15,6 +15,11 @@ var backboneMovie = {
       event.stopPropagation();
       backboneMovie.displayAddForm();
     });
+    $('button[name="addMovie"]').on('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      backboneMovie.addMovieFromDom(event);
+    });
     $('.movieContainer').on('click', 'button[name="delete"]', function(event) {
       event.preventDefault();
       event.stopPropagation();
@@ -37,6 +42,17 @@ var backboneMovie = {
     if($selector.hasClass('hide')){
       $selector.removeClass('hide');
     };
+  },
+  addMovieFromDom: function(event){
+    var movieItem = $(event.target);
+    var $parent = movieItem.parent();
+    var addObj = {
+      title: $parent.children('input[name="title"]').val(),
+      desc: $parent.children('input[name="desc"]').val(),
+      MPAA: $parent.children('input[name="MPAA"]').val(),
+      poster: $parent.children('input[name="poster"]').val()
+    };
+    backboneMovie.addMovie(addObj);
   },
   deleteMovieFromDom: function(event){
     var movieItem = $(event.target);
