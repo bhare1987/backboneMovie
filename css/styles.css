@@ -1,0 +1,80 @@
+* {
+  font-family: 'Helvetica', sans-serif; }
+
+body {
+  background-color: #4D4250; }
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #E6A972; }
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 4em;
+  height: 120px; }
+
+button[name='add'] {
+  padding: 5px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-left: 900px; }
+  button[name='add']:hover {
+    cursor: pointer; }
+
+.addForm {
+  display: flex;
+  flex-flow: column;
+  align-items: center; }
+  .addForm input {
+    display: flex;
+    width: 60%;
+    padding: 5px;
+    margin: 5px; }
+  .addForm button {
+    padding: 5px; }
+    .addForm button:hover {
+      cursor: pointer; }
+
+.movieItem {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray; }
+  .movieItem h2 {
+    margin: 0;
+    flex-basis: 100%; }
+    .movieItem h2 span {
+      background-color: lightgray;
+      padding: 5px;
+      font-style: italic;
+      font-size: .75em;
+      margin-left: 20px; }
+  .movieItem img {
+    flex-basis: 25%;
+    margin: 0;
+    width: auto;
+    height: 250px;
+    margin-top: 20px; }
+  .movieItem p {
+    margin: 0;
+    margin-top: 20px;
+    flex-basis: 70%; }
+  .movieItem .buttons {
+    margin-top: 10px;
+    display: flex;
+    width: 235px;
+    justify-content: space-between; }
+    .movieItem .buttons button {
+      flex-basis: 48%;
+      padding: 5px; }
+
+.hide {
+  display: none !important; }

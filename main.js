@@ -38,10 +38,11 @@ var backboneMovie = {
   },
   displayAddForm: function(event){
     $selector = $('.addForm');
-    window.glob = $selector;
     if($selector.hasClass('hide')){
       $selector.removeClass('hide');
-    };
+    } else {
+      $selector.addClass('hide');
+    }
   },
   addMovieFromDom: function(event){
     var movieItem = $(event.target);
@@ -53,6 +54,7 @@ var backboneMovie = {
       poster: $parent.children('input[name="poster"]').val()
     };
     backboneMovie.addMovie(addObj);
+    $parent.addClass('hide');
   },
   deleteMovieFromDom: function(event){
     var movieItem = $(event.target);

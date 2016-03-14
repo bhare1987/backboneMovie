@@ -1,8 +1,7 @@
 var templates = {
   movie: [
     "<div class='movieItem' data-id='<%=attributes.id%>'>",
-      "<h2><%=attributes.title%></h2>",
-      "<span><%=attributes.MPAA%></span>",
+      "<h2><%=attributes.title%> <span><%=attributes.MPAA%></span></h2>",
       "<img src='<%=attributes.poster%>'/>",
       "<p><%=attributes.desc%></p>",
       "<section class='buttons'>",
