@@ -35,7 +35,7 @@ var FormView = Backbone.View.extend({
       year: ""
     });
     this.$el.html(output);
-    return this
+    return this;
   }
 });
 
@@ -60,13 +60,17 @@ var MovieView = Backbone.View.extend({
   },
   submitEdit: function(event){
     event.preventDefault();
-    this.model.set({
-      title: this.$el.find('input[name="title"]').val(),
-      MPAA: this.$el.find('input[name="MPAA"]').val(),
-      year: this.$el.find('input[name="year"]').val(),
-      desc: this.$el.find('textarea[name="desc"]').val(),
-      poster: this.$el.find('input[name="poster"]').val()
-    });
+    if(this.model.hasChanged()){
+      this.model.set({
+        title: this.$el.find('input[name="title"]').val(),
+        MPAA: this.$el.find('input[name="MPAA"]').val(),
+        year: this.$el.find('input[name="year"]').val(),
+        desc: this.$el.find('textarea[name="desc"]').val(),
+        poster: this.$el.find('input[name="poster"]').val()
+      });
+    } else {
+      this.$el.find('.editForm').html('');
+    }
   },
   initialize: function(){
     this.listenTo(this.model, 'change', this.render);
@@ -75,7 +79,7 @@ var MovieView = Backbone.View.extend({
     var output = this.template(this.model.toJSON());
     this.$el.html(output);
     console.log(this);
-    return this
+    return this;
   }
 });
 
