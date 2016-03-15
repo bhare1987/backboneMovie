@@ -56,6 +56,7 @@ var backboneMovie = {
     };
     backboneMovie.addMovie(addObj);
     $parent.addClass('hide');
+    $parent.children('input').val('');
   },
   deleteMovieFromDom: function(event){
     var movieItem = $(event.target);
@@ -131,3 +132,5 @@ var backboneMovie = {
 $(document).ready(function(){
   backboneMovie.init();
 });
+
+//could use contentEditable attribute instead of replacing it with an edit form
