@@ -19,11 +19,10 @@ var FormView = Backbone.View.extend({
     this.$el.find('textarea').val('');
     this.collection.add(this.model);
     $('.addForm').addClass('hide');
+    this.model = new MovieModel({});
   },
   initialize: function(){
-    if(!this.model) {
-      this.model = new MovieModel({});
-    }
+    this.model = new MovieModel({});
     this.$el.append(this.render().el);
   },
   render: function(){
@@ -77,7 +76,6 @@ var MovieView = Backbone.View.extend({
   render: function(){
     var output = this.template(this.model.toJSON());
     this.$el.html(output);
-    console.log(this);
     return this;
   }
 });
